@@ -206,7 +206,7 @@ case $(job_get_mode) in
             source $GROMACS_DIR/bin/GMXRC.zsh
 
             # Currently all pipeline uses replica exchange (single precision), so we assume gmx_mpi exists.
-            GMX=${GMX:-$(which gmx_mpi)}
+            GMX=${GMX:-$(which gmx)}
             GMX_MPI=${GMX_MPI:-$(which gmx_mpi)}
         fi
 

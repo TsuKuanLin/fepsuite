@@ -60,7 +60,7 @@ mdrun_find_possible_np() {
     fi
     while true; do
         echo "Trying with NP=$NP"
-        job_mpirun $NP $GMX_MPI mdrun $args $NSTLIST_CMD $ntomp
+        $GMX mdrun $args $NSTLIST_CMD $ntomp -ntmpi 2
         if [[ $? != 0 ]]; then
             # fail to run. Check log file to see whether it is domain decomposition problem
             domain_error=0
